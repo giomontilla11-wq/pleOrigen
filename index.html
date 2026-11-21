@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#0d1827" name="theme-color"/>
+<meta content="PLE de prefiguración sobre el origen del universo y del ser humano. 15 recursos curados, secuencia exploratoria y herramientas para leer, hacer y compartir." name="description"/>
+<title>PLE · El origen como pregunta | Universidad de Nariño</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+:root{
+  --navy:#07101f;--navy2:#111d30;--ink:#edf3fa;--muted:#aebbd0;
+  --paper:#070d18;--white:#111c2c;--line:rgba(180,205,237,.17);
+  --green:#8fe5d2;--gold:#edd2a4;--blue:#a7c8ff;--radius:21px;
+  --hand:'Caveat', 'Segoe Print', cursive;
+  --tech:'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:26px}
+body{margin:0;color:var(--ink);background:radial-gradient(ellipse 850px 520px at 84% -8%,#19294d 0%,transparent 70%),linear-gradient(155deg,#07101d,#090d18 70%);font:400 15.5px/1.75 var(--tech);min-width:300px}
+body:before{content:'';pointer-events:none;position:fixed;inset:0;opacity:.25;background-image:radial-gradient(#c3d6f4 0.65px,transparent .9px);background-size:75px 67px;background-position:11px 23px;z-index:-1}
+::selection{background:#9bded4;color:#06101e}
+a{color:var(--green)}
+a:hover{text-decoration-color:currentColor}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid #edd2a4;outline-offset:4px}
+button,input{font:inherit}
+.skip{position:absolute;left:-9999px;top:8px;background:#eed6b1;color:#07101f;padding:9px 16px;z-index:60;border-radius:8px}
+.skip:focus{left:8px}
+.layout{min-height:100vh;display:grid;grid-template-columns:258px minmax(0,1fr)}
+.side{position:sticky;top:0;height:100vh;align-self:start;overflow:auto;background:linear-gradient(175deg,rgba(8,17,33,.96),rgba(8,17,33,.98)),url('assets/constelaciones.webp') center/cover;color:#f5f4ef;padding:29px 20px 23px;display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--line)}
+.side .brand{display:flex;gap:11px;align-items:center;text-decoration:none;color:#f6f8fb;margin:0 5px 9px}
+.brand-mark{width:42px;height:42px;border:1px solid #dbcdab80;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:25px;background:#e6d2b20a;box-shadow:0 0 0 6px #e6d2b205}
+.brand-title{display:block;font-size:12px;line-height:1.3;letter-spacing:.19em;font-weight:700;text-transform:uppercase}
+.brand-sub{font-size:10px;color:#b6bacb;letter-spacing:.04em}
+.sidelabel{color:#8fa9bf;font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;margin:0 11px}
+.nav{display:grid;gap:5px}
+.nav a{display:flex;gap:11px;align-items:center;min-height:43px;padding:10px 13px;color:#bac9d9;text-decoration:none;font-weight:500;font-size:12.5px;border-radius:13px;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
+.nav a .dot{display:block;width:6px;height:6px;flex:none;border-radius:50%;background:#596e87;box-shadow:0 0 0 3px #59708c0f}
+.nav a:hover{color:#fff;background:#fff0f09}
+.nav a.active{color:#f7f4ed;background:linear-gradient(90deg,#a7bfe414,#a7bfe406);border-color:#b9cae01e}
+.nav a.active .dot{background:var(--gold);box-shadow:0 0 0 4px #d6be9b18}
+.sidefoot{margin-top:auto;padding:20px 10px 0;color:#8e9eaf;border-top:1px solid var(--line);font-size:11px;line-height:1.75}
+.sidefoot b{color:#d8dfec}
+.main{width:100%;max-width:1460px;padding:0 clamp(21px,4.8vw,76px) 60px;margin:0 auto;min-width:0}
+.topline{display:flex;justify-content:space-between;gap:18px;align-items:center;border-bottom:1px solid var(--line);padding:30px 0 23px}
+.crumb{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#b8bfd0}
+.topbadge{font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid #dcc9a74d;border-radius:100px;padding:7px 13px;color:var(--gold);background:#ecd1a80d;white-space:nowrap}
+.view{display:none;animation:arrive .33s ease-out}
+.view.active{display:block}
+@keyframes arrive{from{opacity:.1;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1,h2,h3,p{margin-top:0} h1,h2,h3,.display{font-family:var(--tech)}
+h1{font-size:clamp(3rem,6.2vw,6.1rem);line-height:1.02;letter-spacing:-.07em;font-weight:500;max-width:980px;margin-bottom:22px}
+h1 .highlight{font-family:var(--hand);font-size:1.2em;letter-spacing:-.035em;font-weight:500;color:var(--gold);white-space:nowrap}
+h2{font-size:clamp(1.8rem,3.45vw,3.05rem);line-height:1.14;letter-spacing:-.05em;font-weight:500;margin-bottom:16px}
+h3{font-size:18px;line-height:1.35;letter-spacing:-.024em;font-weight:600;margin-bottom:10px}
+.intro{padding:44px 0 30px}
+.eyebrow{font-size:10.5px;color:#9adacf;font-weight:600;letter-spacing:.19em;text-transform:uppercase;margin:0 0 15px}
+.lead{font-size:16px;line-height:1.95;max-width:840px;color:#afc0d1;font-weight:400}
+.lead em{color:#e6ecf6;font-style:normal}
+.scribble{font:500 26px/1.2 var(--hand);color:var(--gold);margin:0 0 11px}
+.hero{isolation:isolate;position:relative;overflow:hidden;min-height:450px;border-radius:26px;padding:clamp(30px,5vw,65px);margin:14px 0 24px;border:1px solid #b9c8f032;background:linear-gradient(90deg,rgba(6,12,26,.96) 0%,rgba(6,13,29,.83) 39%,rgba(7,15,34,.22) 100%),url('assets/supernova.webp') center center/cover;box-shadow:0 22px 80px #02061470;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.hero:after{content:'';position:absolute;right:-62px;top:-103px;width:350px;height:350px;border:1px solid #ffebbd43;border-radius:50%;z-index:-1;box-shadow:0 0 0 57px #d8cfb00d,0 0 0 105px #bcbfed06;pointer-events:none}
+.hero:before{content:none}
+.hero .eyebrow{color:#b0e1e7}
+.hero h2{font:500 clamp(3.7rem,7.5vw,7rem)/.89 var(--hand);letter-spacing:-.045em;color:#ffe5b4;margin:0 0 23px;max-width:750px;text-wrap:balance;text-shadow:0 4px 23px #02050c60}
+.hero p:not(.eyebrow){max-width:570px;color:#e2e9f6;line-height:1.83;font-size:15px;text-shadow:0 1px 11px #05081490}
+.hero a.primary{display:inline-flex;align-items:center;gap:13px;padding:12px 20px;margin-top:17px;background:#f3dfbb;border:1px solid transparent;color:#102033;border-radius:99px;font-size:12px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s}
+.hero a.primary:hover{background:#fff;transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:22px 0 37px}
+.stat{background:#0d1727e0;border:1px solid var(--line);border-radius:18px;padding:22px 23px}
+.stat b{display:block;color:var(--gold);font:400 clamp(28px,3.5vw,42px)/1.18 var(--tech);letter-spacing:-.06em}
+.stat span{font-size:11px;color:#9eacc2;letter-spacing:.015em}
+.miniheading{margin:31px 0 14px;color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.19em;font-weight:600}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:15px}
+.tile{display:flex;flex-direction:column;min-width:0;background:linear-gradient(150deg,#152237db,#101929f0);border:1px solid var(--line);border-radius:19px;padding:25px;transition:transform .18s,border-color .18s}
+.tile:hover{transform:translateY(-3px);border-color:#c5ddf958}
+.tile .icon{font-size:25px;margin-bottom:17px;color:var(--gold)}
+.tile h3{color:#eaf4fd}
+.tile p{font-size:12.5px;line-height:1.8;color:#aabbd1;margin:3px 0 17px}
+.tile a{font-size:12px;color:var(--green);font-weight:700;text-decoration:none;margin-top:auto}
+.tile a:hover{text-decoration:underline}
+.callout{background:linear-gradient(90deg,#14263c,#112235);border:1px solid #8ce2d246;border-left:3px solid var(--green);border-radius:13px;padding:19px 23px;color:#d8e6ec;font-size:13.5px;line-height:1.86;margin:23px 0}
+.callout strong{color:var(--green)}
+.darkbox{border:1px solid #d0c3a535;border-radius:22px;padding:28px 30px;margin:24px 0;background:radial-gradient(circle at 95% 10%,#34466666,transparent 55%),#141d2e;color:#f4f5f8}
+.darkbox h3{font-size:21px;font-weight:500;color:#f5dfb7}
+.darkbox p{color:#d0d9e7;font-size:13.5px;line-height:1.8;max-width:830px}
+.q{font:500 clamp(20px,2.6vw,28px)/1.45 var(--hand);color:#f7e2c5}
+.section-head{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:center;max-width:none;min-height:255px;padding:clamp(29px,4vw,55px);margin:32px 0 20px;border-radius:24px;border:1px solid #bfccdd35;background:linear-gradient(90deg,#07101eea 0%,#07101ed3 49%,#07101e61 100%),url('assets/constelaciones.webp') center/cover}
+.section-head:after{content:'';position:absolute;right:-60px;top:-67px;width:270px;height:270px;border:1px solid #d4cba13f;border-radius:50%;pointer-events:none;z-index:-1}
+#arquitectura .section-head{background-image:linear-gradient(90deg,#07101eea 0%,#07101edd 52%,#07101e57 100%),url('assets/constelaciones.webp')}
+#leer .section-head{background-image:linear-gradient(90deg,#07101ef2 0%,#07101ed4 54%,#07101e67 100%),url('assets/planetas_nebulosa.webp')}
+#hacer .section-head{background-image:linear-gradient(90deg,#07101ef5 0%,#07101ed1 56%,#07101e67 100%),url('assets/planeta_anillos.webp')}
+#compartir .section-head{background-image:linear-gradient(90deg,#07101ef4 0%,#07101ec7 58%,#07101e69 100%),url('assets/constelaciones.webp')}
+#ruta .section-head{background-image:linear-gradient(90deg,#07101eef 0%,#07101edb 55%,#07101e5a 100%),url('assets/planetas_nebulosa.webp')}
+#criterios .section-head{background-image:linear-gradient(90deg,#07101ef2 0%,#07101ee3 58%,#07101e77 100%),url('assets/planeta_anillos.webp')}
+#bitacora .section-head{background-image:linear-gradient(90deg,#07101ef1 0%,#07101ed6 59%,#07101e69 100%),url('assets/supernova.webp')}
+.section-head h2{max-width:780px;text-shadow:0 2px 12px #0308146e}
+.section-head p:not(.eyebrow){color:#dfebf7;line-height:1.85;font-size:13.5px;max-width:840px;margin-bottom:0}
+.section-head .eyebrow{color:#a8eddf}
+.ribbon{display:grid;grid-template-columns:1fr 20px 1fr 20px 1fr;gap:10px;align-items:center;margin:25px 0}
+.ribbon .r{background:#131f32;border:1px solid var(--line);border-radius:15px;padding:20px;color:#f2f6ff;font-weight:600;font-size:13px}
+.ribbon .r small{display:block;font-size:11px;color:#a8b9c9;margin-top:8px;font-weight:400;line-height:1.55}
+.ribbon .arrow{color:var(--gold);text-align:center}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0 30px}
+.resource{border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#141f31 0%,#0d192b 100%);padding:23px;display:flex;flex-direction:column;min-width:0;transition:border-color .18s}
+.resource:hover{border-color:#9ed9d47a}
+.resource[hidden]{display:none}
+.resource-heading{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.resource-num{background:#4b87932b;color:var(--green);border:1px solid #9fd9c137;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:700}
+.resource-kind,.resource-moment{font-size:10px;color:#aebdd2;font-weight:500}
+.resource-moment{margin-left:auto;color:#d6bc88}
+.resource h3{font-size:16px;color:#f2f5fc;font-weight:600;margin:0 0 6px}
+.source-name{font-size:11px;color:#a1acc1;line-height:1.5;margin-bottom:12px}
+.resource-why{font-size:12.5px;line-height:1.78;color:#c1cfdb}
+.resource details{border-top:1px solid var(--line);padding-top:12px;margin:8px 0 16px}
+.resource summary{color:#a4e9df;cursor:pointer;list-style:none;font-size:11px;font-weight:600}
+.resource summary:after{content:'＋';float:right}
+.resource details[open] summary:after{content:'−'}
+.resource dl{margin:15px 0 0;font-size:11.5px;line-height:1.65}
+.resource dt{color:#e4d2ae;font-weight:600}
+.resource dd{color:#afbdcb;margin:3px 0 10px}
+.resource-link{display:inline-flex;align-items:center;gap:8px;margin-top:auto;color:#a3ecdf;font-size:12px;font-weight:700;text-decoration:none}
+.resource-link:hover{text-decoration:underline}
+.search-wrap{margin:17px 0 20px}
+.search-wrap label{display:block;margin-bottom:8px;color:#cbd9eb;font-size:12px;font-weight:500}
+.search-wrap input{width:100%;background:#111e32;border:1px solid #a6bad13b;color:#f3f5f8;padding:12px 15px;border-radius:12px;font-size:13px}
+.search-wrap input::placeholder{color:#7a8fa6}
+.empty{display:none;color:#a7b8c8;padding:20px}
+.forms-layout{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:21px}
+.forms-card{background:#121e30;border:1px solid var(--line);border-radius:20px;padding:25px;min-width:0}
+.forms-card h3{font-weight:500;color:#f5f1e9}
+.forms-card p,.forms-card li{color:#bac7d8;font-size:12.5px;line-height:1.8}
+.forms-card ul,.forms-card ol{padding-left:23px}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;margin-bottom:14px;border-radius:100px;border:1px solid #e9d1a550;background:#eed8b715;color:#eecf99;font-size:10px;letter-spacing:.025em;font-weight:600}
+.status:before{content:'◌';font-size:13px}
+.ghost-link,.form-action{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:11.5px;font-weight:700;border-radius:10px;padding:11px 13px;margin-top:11px}
+.ghost-link{border:1px solid #86d7c78c;color:#a5eadf;background:#8fe5d20b}
+.ghost-link:hover{background:#8fe5d21c}
+.form-action{background:#e9d4af;color:#0b1725;border:1px solid transparent}
+.form-action:hover{background:#fff2d6}
+.form-action[hidden]{display:none}
+.forms-pending{color:#edd2a4!important;font-size:11.5px!important}
+.quote-list{padding-left:22px}.quote-list li{padding-bottom:11px}
+.tally-embedded{background:linear-gradient(180deg,#172437 0%,#0d192b 100%)}
+.tally-embedded iframe{display:block;margin-top:17px;width:100%;background:#fff!important;border:1px solid #b8bdc8!important;border-radius:14px!important}
+.genially-launch{padding:12px 18px!important;background:#f1d9ae!important;border:none!important;color:#061527!important;border-radius:11px!important;font:700 12px var(--tech)!important;cursor:pointer}
+.genially-launch:hover{background:white!important}
+#geniallyFrameHost{margin-top:18px}
+#geniallyFrameHost iframe{border:1px solid var(--line)!important;background:#060d1a!important}
+.steps{border-left:1px solid #e6d0ab4c;margin:31px 0 22px 16px;padding-left:28px}
+.step{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr);gap:19px;margin-bottom:14px;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:#111e30}
+.step:before{content:'';position:absolute;left:-36px;top:27px;width:12px;height:12px;background:#ead5ae;border:3px solid #101c2e;border-radius:50%;box-shadow:0 0 0 1px #d9c9aa90}
+.step h3{color:#f5f6fb;margin-bottom:7px}
+.step p{color:#bbc8d8;font-size:12.5px;line-height:1.8;margin-bottom:9px}
+.step-no{color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.08em;margin-top:6px}
+.step-out{color:#a6c2c9!important}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:18px 0}
+.check{border:1px solid var(--line);background:#111c2d;border-radius:15px;padding:19px 20px;color:#bfcfe0;font-size:12.5px;line-height:1.8}
+.check strong{display:block;color:#f0d4a6;margin-bottom:6px;font-size:13px}
+.plain-list{font-size:13px;line-height:1.85;color:#c4d1df;padding-left:25px}
+.plain-list li{margin-bottom:10px}
+.refs{color:#aabed0;font-size:12.5px;line-height:1.75;border-top:1px solid var(--line);padding:20px 0}
+.refs a{color:#9fe9df}
+.bottomnav{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+.bottomnav a{display:inline-flex;align-items:center;color:#a1e5d9;text-decoration:none;border:1px solid #7bbaa96e;padding:12px 16px;border-radius:99px;font-size:11.5px;font-weight:700}
+.bottomnav a:hover{background:#6fb8a61c}
+.footer{border-top:1px solid var(--line);padding-top:24px;margin-top:40px;color:#849ab0;font-size:11px;line-height:1.8}
+noscript{display:block;background:#5a3d38;color:#fff;padding:13px 20px}
+@media(max-width:1180px){.layout{grid-template-columns:220px minmax(0,1fr)}.main{padding:0 28px 45px}.side{padding:22px 13px}.hero{min-height:410px}.resource-grid{gap:12px}}
+@media(max-width:830px){.layout{display:block}.side{position:relative;top:auto;height:auto;min-height:0;max-height:none;padding:16px 15px 12px;gap:10px;overflow:visible;border-right:none;border-bottom:1px solid var(--line)}.side .brand{margin:0 0 8px}.side .sidelabel,.sidefoot{display:none}.side nav{display:flex;gap:7px;overflow:auto;white-space:nowrap;padding:0 0 3px}.nav a{flex:none;padding:10px 11px;font-size:11.5px;min-height:36px}.nav a .dot{display:none}.main{padding:0 18px 34px}.topline{padding:17px 0 20px}.intro{padding:31px 0 22px}.lead{font-size:14px}.hero{padding:31px 25px;min-height:355px;background-position:66% center}.hero h2{font-size:clamp(53px,11vw,86px)}.stats{gap:8px}.stat{padding:16px}.stat b{font-size:28px}.stat span{font-size:10px}.grid3{grid-template-columns:1fr}.resource-grid{grid-template-columns:1fr}.forms-layout{grid-template-columns:1fr}.ribbon{display:block}.ribbon .arrow{display:block;transform:rotate(90deg);text-align:center;padding:2px}.ribbon .r{padding:16px}.checks{grid-template-columns:1fr}.section-head{margin:20px 0 16px;min-height:245px;padding:27px;background-position:62% center}.section-head h2{font-size:clamp(26px,5vw,38px)}.step{grid-template-columns:1fr;gap:3px;padding:17px}.step-no{margin:0}.brand-mark{width:36px;height:36px}}
+@media(max-width:430px){h1{font-size:clamp(40px,11vw,56px)}.hero h2{font-size:57px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:13px 9px}.stat b{font-size:25px}.topbadge{font-size:9px;padding:5px 8px}.crumb{font-size:9px}.section-head{padding:25px 21px}.forms-card{padding:19px}.hero{min-height:350px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.view{animation:none}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Actualización: los caminos del aprendizaje sustituyen las tarjetas técnicas. */
+.hand-accent{font-family:var(--hand);font-style:normal;color:var(--gold);font-weight:500;font-size:1.17em;white-space:normal;letter-spacing:-.025em}
+.journey-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin:19px 0 22px}
+.journey-card{isolation:isolate;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:295px;padding:30px 30px 27px;border:1px solid #a6b8d64f;border-radius:21px;background-color:#111d30;background-size:cover;background-position:center;transition:transform .2s,border-color .2s,box-shadow .2s}
+.journey-card:hover{transform:translateY(-3px);border-color:#bbdbd0a0;box-shadow:0 13px 38px #05091585}
+.journey-card:after{content:'';position:absolute;right:-82px;bottom:-122px;width:270px;height:270px;border:1px solid #eddaab39;border-radius:50%;box-shadow:0 0 0 30px #ecdcbd09,0 0 0 73px #b1cbe508;z-index:-1;pointer-events:none}
+.journey-ask{background-image:linear-gradient(105deg,#0b162af5 0%,#111b32cf 100%),url('assets/constelaciones.webp')}
+.journey-explore{background-image:linear-gradient(105deg,#0b162af2 0%,#111b32c9 100%),url('assets/supernova.webp')}
+.journey-relate{background-image:linear-gradient(105deg,#0b162af4 0%,#111b32d1 100%),url('assets/planeta_anillos.webp')}
+.journey-reflect{background-image:linear-gradient(105deg,#0b162af4 0%,#111b32c9 100%),url('assets/planetas_nebulosa.webp')}
+.journey-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:21px}
+.journey-index{font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:600;color:#a6d6d8}
+.journey-symbol{font-size:29px;line-height:1;color:#edd9ae}
+.journey-card h3{font:500 clamp(35px,4vw,46px)/1 var(--hand);color:#f3e1c5;margin:0 0 14px;letter-spacing:-.02em}
+.journey-card p{font-size:13px;color:#d8e3f2;line-height:1.86;margin:0 0 25px;max-width:520px}
+.journey-card a{color:#a9f0df;font-size:12px;font-weight:650;text-decoration:none;margin-top:auto;border-bottom:1px solid #89d9c578;align-self:flex-start;padding-bottom:5px}
+.journey-card a:hover,.journey-card a:focus-visible{color:#fff;border-bottom-color:#fff}
+.journey-flow{display:flex;justify-content:center;flex-wrap:wrap;align-items:center;gap:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 12px;margin:23px 0 28px;color:#c2d2e6;font-size:12px}
+.journey-flow span:nth-child(even){color:var(--gold);font-size:18px}
+.questions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:23px 0}
+.question-card{background:#101e30;border:1px solid var(--line);border-radius:20px;padding:25px 27px}
+.question-card span{color:#91e3d6;font:600 11px/1 var(--tech);letter-spacing:.13em}
+.question-card h3{font-size:20px;color:#f1dfbe;font-weight:500;margin:13px 0}
+.question-card p{color:#b8c7d9;font-size:13px;line-height:1.8;margin:0}
+@media(max-width:830px){.journey-grid,.questions-grid{grid-template-columns:1fr}.journey-card{min-height:265px;padding:26px}.journey-card h3{font-size:41px}.journey-flow{gap:9px;text-align:center}.journey-flow span{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.journey-card{transition:none}}
+
+</style>
+<link as="image" href="assets/supernova.webp" rel="preload"/><meta content="dark" name="color-scheme"/></head>
+<body>
+<a class="skip" href="#content">Ir al contenido principal</a>
+<div class="layout">
+<aside class="side"><a aria-label="Inicio del PLE" class="brand" data-view="inicio" href="#inicio"><span aria-hidden="true" class="brand-mark">✦</span><span><span class="brand-title">ORIGEN · PLE</span><br/><span class="brand-sub">MAESTRÍA EN EDUCACIÓN VIRTUAL</span></span></a>
+<p class="sidelabel">Explorar</p>
+<nav aria-label="Navegación principal" class="nav">
+<a class="active" data-view="inicio" href="#inicio"><span class="dot"></span>Inicio</a>
+<a data-view="arquitectura" href="#arquitectura"><span class="dot"></span>Múltiples caminos</a>
+<a data-view="leer" href="#leer"><span class="dot"></span>01 · Leer</a>
+<a data-view="hacer" href="#hacer"><span class="dot"></span>02 · Hacer / reflexionar</a>
+<a data-view="compartir" href="#compartir"><span class="dot"></span>03 · Compartir</a>
+<a data-view="ruta" href="#ruta"><span class="dot"></span>Secuencia de 7 días</a>
+<a data-view="criterios" href="#criterios"><span class="dot"></span>Criterios y ética</a>
+<a data-view="bitacora" href="#bitacora"><span class="dot"></span>Preguntas abiertas</a>
+</nav>
+<div class="sidefoot"><b>Universidad de Nariño</b><br/>Leidy Yurani Escobar Martínez<br/>Omar Giovanni Montilla Eraso<br/><br/>Actividad 2 · Módulo IV<br/>Diseño de un entorno para la prefiguración.</div>
+</aside>
+<main class="main" id="content">
+<div class="topline"><div class="crumb">Universidad de Nariño <span aria-hidden="true">/</span> Maestría en Educación Virtual</div><span class="topbadge">Propuesta en diseño · Sin datos de campo</span></div>
+<section aria-labelledby="t-inicio" class="view active" id="inicio"><div class="intro"><p class="eyebrow">Un entorno para aprender, preguntar y relacionar</p><p class="scribble">Una constelación de preguntas</p><h1 id="t-inicio">El origen como <span class="highlight">pregunta.</span></h1><p class="lead">Entorno Personal de Aprendizaje (PLE) vinculado al proyecto <em>El origen del universo como pregunta pedagógica transdisciplinar</em>. Una arquitectura de recursos, herramientas y relaciones para el momento de <b>prefiguración</b>.</p></div>
+<div class="hero"><p class="eyebrow">Pregunta orientadora</p><h2>¿De dónde venimos?</h2><p>¿Qué concepciones, narrativas y fuentes de conocimiento movilizan los futuros licenciados para explicar el origen del universo y cómo relacionan esas ideas con la noción de origen del ser humano?</p><a class="primary" data-view="arquitectura" href="#arquitectura">Descubrir los caminos <span aria-hidden="true">→</span></a></div>
+<div class="stats"><div class="stat"><b>15</b><span>Recursos curados</span></div><div class="stat"><b>03</b><span>Funciones del PLE</span></div><div class="stat"><b>07</b><span>Días flexibles propuestos</span></div></div>
+<p class="miniheading">Tres maneras de recorrer el entorno</p><div class="grid3"><article class="tile"><div aria-hidden="true" class="icon">◉</div><h3>Leer y fundamentar</h3><p>Ocho fuentes para revisar perspectivas pedagógicas, científica y ética, respetando la secuencia exploratoria.</p><a data-view="leer" href="#leer">Explorar las 8 fuentes →</a></article><article class="tile"><div aria-hidden="true" class="icon">◇</div><h3>Hacer y reflexionar</h3><p>Cuatro herramientas integraban la selección original para hacer y reflexionar. En esta actualización se incorporan Tally (prototipo del Anexo 3) y Genially (experiencia hipermedia posterior), conservando la trazabilidad del inventario inicial.</p><a data-view="hacer" href="#hacer">Explorar las 4 herramientas →</a></article><article class="tile"><div aria-hidden="true" class="icon">✳</div><h3>Compartir y revisar</h3><p>Tres espacios posibles para el diálogo, la devolución entre pares y la formulación de nuevas preguntas.</p><a data-view="compartir" href="#compartir">Explorar las 3 herramientas →</a></article></div>
+<div class="callout"><strong>Decisión metodológica central.</strong> Las lecturas científicas que expliquen el origen del universo no se presentan a los participantes antes de recoger sus concepciones iniciales. De otra manera se podría alterar el carácter exploratorio del instrumento.</div>
+<div class="bottomnav"><a data-view="ruta" href="#ruta">Ver la secuencia de prefiguración</a><a data-view="bitacora" href="#bitacora">Continuar con preguntas abiertas</a></div>
+</section>
+<section aria-labelledby="t-arquitectura" class="view" id="arquitectura">
+  <div class="section-head">
+    <p class="eyebrow">Cartografía de aprendizaje · Distintos modos de comprender</p>
+    <h2 id="t-arquitectura">Una pregunta, <em class="hand-accent">múltiples caminos.</em></h2>
+    <p>Preguntarnos por el origen del universo es abrir un diálogo entre saberes, experiencias y preguntas. No se trata de reunir respuestas idénticas, sino de reconocer sus contextos y distinguir sus formas de construcción y validación.</p>
+  </div>
+  <div class="darkbox">
+    <p class="eyebrow">La pregunta que nos convoca</p>
+    <div class="q">¿Qué concepciones y narrativas explican el origen del universo y cómo se relacionan con la noción de origen humano?</div>
+    <p>Partimos de las inquietudes de quienes se forman para enseñar en Educación Básica Primaria. La exploración de sus concepciones iniciales antecede al encuentro con nuevas perspectivas.</p>
+  </div>
+  <p class="miniheading">Cuatro movimientos de una misma experiencia</p>
+  <div class="journey-grid" aria-label="Recorrido pedagógico: preguntarnos, explorar, relacionar, reflexionar">
+    <article class="journey-card journey-ask">
+      <div class="journey-top"><span class="journey-index">01 / INICIO</span><span aria-hidden="true" class="journey-symbol">✧</span></div>
+      <h3>Preguntarnos</h3>
+      <p>Reconocer lo que pensamos, sabemos y hemos escuchado sobre el origen. Primero expresamos nuestras concepciones sin consultar explicaciones que puedan influir en ellas.</p>
+      <a data-view="hacer" href="#hacer" aria-label="Ir al cuestionario inicial en Hacer y reflexionar">Explorar mis ideas <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="journey-card journey-explore">
+      <div class="journey-top"><span class="journey-index">02 / DESPUÉS DEL DIAGNÓSTICO</span><span aria-hidden="true" class="journey-symbol">✦</span></div>
+      <h3>Explorar</h3>
+      <p>Acercarnos a explicaciones científicas y preguntas culturales, filosóficas y educativas mediante una experiencia hipermedia que permite elegir diferentes rutas.</p>
+      <a data-view="hacer" href="#hacer" aria-label="Ir a la experiencia hipermedia en Hacer y reflexionar">Descubrir otras perspectivas <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="journey-card journey-relate">
+      <div class="journey-top"><span class="journey-index">03 / CONEXIONES</span><span aria-hidden="true" class="journey-symbol">⋆</span></div>
+      <h3>Relacionar</h3>
+      <p>Reconocer encuentros, diferencias y tensiones entre saberes. Relacionarlos no significa confundir las evidencias de la ciencia con los sentidos de las narrativas culturales.</p>
+      <a data-view="leer" href="#leer" aria-label="Consultar fuentes de lectura y contraste">Consultar las fuentes <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="journey-card journey-reflect">
+      <div class="journey-top"><span class="journey-index">04 / NUEVAS PREGUNTAS</span><span aria-hidden="true" class="journey-symbol">✺</span></div>
+      <h3>Reflexionar</h3>
+      <p>Volver sobre nuestras ideas, preguntarnos qué ha cambiado y pensar cómo transformar estas inquietudes en una experiencia pedagógica para niños y niñas.</p>
+      <a data-view="compartir" href="#compartir" aria-label="Conocer espacios para compartir nuevas preguntas">Conversar y compartir <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <div class="journey-flow" aria-label="Relación entre las funciones de aprendizaje">
+    <span>Leer y fundamentar</span><span aria-hidden="true">⟶</span>
+    <span>Hacer y reflexionar</span><span aria-hidden="true">⟶</span>
+    <span>Compartir y revisar</span><span aria-hidden="true">↺</span>
+  </div>
+  <div class="callout"><strong>Antes de explorar otras perspectivas:</strong> respondemos primero el cuestionario inicial. Esta secuencia permite reconocer concepciones previas sin condicionarlas con contenidos explicativos.</div>
+</section>
+<section aria-labelledby="t-leer" class="view" id="leer"><div class="section-head"><p class="eyebrow">01 · Acceder a información</p><h2 id="t-leer">Leer: ocho recursos curados</h2><p>Fuentes académicas, organismos especializados y documentos de orientación que permiten fundamentar el diseño y, en el momento adecuado, contrastar explicaciones científicas con concepciones inicialmente recogidas.</p></div><div class="callout"><strong>Secuencia ética:</strong> los recursos 04, 05 y 08, que presentan explicaciones de cosmología, se reservan para un momento posterior a la indagación de concepciones iniciales.</div><div class="search-wrap"><label for="s-leer">Buscar entre los recursos para leer</label><input class="resource-search" data-target="leer" id="s-leer" placeholder="Autor, tema, actividad o recurso..." type="search"/></div><div class="resource-grid"><article class="resource" data-search="la anatomía de los ples fundamenta el ple como red intencional de fuentes, herramientas y relaciones, más allá de un listado de enlaces. organizar una matriz de las tres funciones del entorno y explicar su pertinencia para el proyecto. castañeda y adell · 2013">
+<div class="resource-heading"><span class="resource-num">01</span><span class="resource-kind">Capítulo académico · Español</span><span class="resource-moment">Preparación docente</span></div>
+<h3>La anatomía de los PLEs</h3><p class="source-name">Castañeda y Adell · 2013</p>
+<p class="resource-why">Fundamenta el PLE como red intencional de fuentes, herramientas y relaciones, más allá de un listado de enlaces.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Organizar una matriz de las tres funciones del entorno y explicar su pertinencia para el proyecto.</dd><dt>Evidencia</dt><dd>Mapa argumentado del PLE.</dd><dt>Condición de uso</dt><dd>Consultar y citar desde el repositorio; la redistribución del capítulo requiere verificar permisos.</dd></dl>
+</details><a aria-label="Consultar recurso 01: La anatomía de los PLEs" class="resource-link" href="https://hdl.handle.net/10201/30408" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="«la escuela está muy detenida en el tiempo»: julián de zubiría invita a cuestionar la fragmentación del conocimiento y a convertir preguntas significativas en decisiones didácticas. relacionar dos críticas educativas de la entrevista con criterios para diseñar la secuencia. m. f. romero / crossmedialab · s. f.">
+<div class="resource-heading"><span class="resource-num">02</span><span class="resource-kind">Entrevista · Español</span><span class="resource-moment">Preparación docente</span></div>
+<h3>«La escuela está muy detenida en el tiempo»: Julián de Zubiría</h3><p class="source-name">M. F. Romero / CrossmediaLab · s. f.</p>
+<p class="resource-why">Invita a cuestionar la fragmentación del conocimiento y a convertir preguntas significativas en decisiones didácticas.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Relacionar dos críticas educativas de la entrevista con criterios para diseñar la secuencia.</dd><dt>Evidencia</dt><dd>Matriz «problema → decisión didáctica».</dd><dt>Condición de uso</dt><dd>Enlazar y citar sin reproducir íntegramente la entrevista ni sus fotografías.</dd></dl>
+</details><a aria-label="Consultar recurso 02: «La escuela está muy detenida en el tiempo»: Julián de Zubiría" class="resource-link" href="https://www.utadeo.edu.co/es/articulo/crossmedialab/277626/la-escuela-esta-muy-detenida-en-el-tiempo-julian-de-zubiria" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="importancia de la inteligencia artificial en la educación del siglo xxi permite contrastar oportunidades y riesgos del uso de ia en ambientes virtuales. definir usos admisibles de ia y riesgos que deben evitarse en el diseño del instrumento. numa-sanjuán, diaz-guecha y peñaloza-tarazona · 2024">
+<div class="resource-heading"><span class="resource-num">03</span><span class="resource-kind">Artículo académico · Español</span><span class="resource-moment">Preparación docente</span></div>
+<h3>Importancia de la inteligencia artificial en la educación del siglo XXI</h3><p class="source-name">Numa-Sanjuán, Diaz-Guecha y Peñaloza-Tarazona · 2024</p>
+<p class="resource-why">Permite contrastar oportunidades y riesgos del uso de IA en ambientes virtuales.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Definir usos admisibles de IA y riesgos que deben evitarse en el diseño del instrumento.</dd><dt>Evidencia</dt><dd>Protocolo breve de uso responsable.</dd><dt>Condición de uso</dt><dd>No compartir respuestas identificables ni delegar la interpretación de información cualitativa.</dd></dl>
+</details><a aria-label="Consultar recurso 03: Importancia de la inteligencia artificial en la educación del siglo XXI" class="resource-link" href="https://doi.org/10.15649/2346030X.3776" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="el universo primitivo ofrece información científica contrastable sobre las primeras etapas del universo. después de obtener las concepciones iniciales, contrastar una idea con evidencia científica. nasa ciencia · s. f.">
+<div class="resource-heading"><span class="resource-num">04</span><span class="resource-kind">Divulgación científica · Español</span><span class="resource-moment">Solo después del diagnóstico</span></div>
+<h3>El universo primitivo</h3><p class="source-name">NASA Ciencia · s. f.</p>
+<p class="resource-why">Ofrece información científica contrastable sobre las primeras etapas del universo.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Después de obtener las concepciones iniciales, contrastar una idea con evidencia científica.</dd><dt>Evidencia</dt><dd>Tabla «idea inicial / evidencia / pregunta abierta».</dd><dt>Condición de uso</dt><dd>Uso posterior al diagnóstico; revisar créditos de imágenes o videos de terceros.</dd></dl>
+</details><a aria-label="Consultar recurso 04: El universo primitivo" class="resource-link" href="https://ciencia.nasa.gov/universo/el-universo-primitivo/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="astronomy 2e · capítulo 29: resumen de cosmología apoya la precisión de conceptos y la revisión del marco explicativo de la cosmología. elaborar un glosario científico de uso docente, con fuentes verificables. fraknoi, morrison y wolff / openstax · 2022">
+<div class="resource-heading"><span class="resource-num">05</span><span class="resource-kind">Libro universitario · Inglés</span><span class="resource-moment">Solo después del diagnóstico</span></div>
+<h3>Astronomy 2e · Capítulo 29: resumen de cosmología</h3><p class="source-name">Fraknoi, Morrison y Wolff / OpenStax · 2022</p>
+<p class="resource-why">Apoya la precisión de conceptos y la revisión del marco explicativo de la cosmología.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Elaborar un glosario científico de uso docente, con fuentes verificables.</dd><dt>Evidencia</dt><dd>Glosario contrastado.</dd><dt>Condición de uso</dt><dd>Requiere mediación lingüística; utilizar después de recoger concepciones iniciales.</dd></dl>
+</details><a aria-label="Consultar recurso 05: Astronomy 2e · Capítulo 29: resumen de cosmología" class="resource-link" href="https://openstax.org/books/astronomy-2e/pages/29-summary" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="pautas de diseño universal para el aprendizaje 3.0 orienta alternativas de implicación, representación y formas de expresión en entornos virtuales. revisar accesibilidad del formulario y anticipar barreras de conectividad y lectura. cast · 2024">
+<div class="resource-heading"><span class="resource-num">06</span><span class="resource-kind">Guía institucional · Español/inglés</span><span class="resource-moment">Preparación docente</span></div>
+<h3>Pautas de Diseño Universal para el Aprendizaje 3.0</h3><p class="source-name">CAST · 2024</p>
+<p class="resource-why">Orienta alternativas de implicación, representación y formas de expresión en entornos virtuales.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Revisar accesibilidad del formulario y anticipar barreras de conectividad y lectura.</dd><dt>Evidencia</dt><dd>Matriz de barreras y ajustes DUA.</dd><dt>Condición de uso</dt><dd>Enlazar las pautas y elaborar síntesis original; no dar por autorizada su reproducción gráfica.</dd></dl>
+</details><a aria-label="Consultar recurso 06: Pautas de Diseño Universal para el Aprendizaje 3.0" class="resource-link" href="https://udlguidelines.cast.org/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="guía para el uso de ia generativa en educación e investigación fundamenta precauciones de privacidad, transparencia y supervisión humana al usar ia. definir criterios de anonimización y control del uso de herramientas externas. miao y holmes / unesco · 2024">
+<div class="resource-heading"><span class="resource-num">07</span><span class="resource-kind">Guía internacional · Español</span><span class="resource-moment">Preparación docente</span></div>
+<h3>Guía para el uso de IA generativa en educación e investigación</h3><p class="source-name">Miao y Holmes / UNESCO · 2024</p>
+<p class="resource-why">Fundamenta precauciones de privacidad, transparencia y supervisión humana al usar IA.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Definir criterios de anonimización y control del uso de herramientas externas.</dd><dt>Evidencia</dt><dd>Declaración de uso y protocolo ético.</dd><dt>Condición de uso</dt><dd>No ingresar respuestas reales de participantes a servicios externos sin autorización.</dd></dl>
+</details><a aria-label="Consultar recurso 07: Guía para el uso de IA generativa en educación e investigación" class="resource-link" href="https://unesdoc.unesco.org/ark:/48223/pf0000389227" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="what happened in the universe after the big bang? ofrece un soporte audiovisual para abordar explicaciones de etapas tempranas del universo. después del diagnóstico, elaborar notas críticas sobre el video y generar nuevas preguntas. nasa / esa / csa · 2016">
+<div class="resource-heading"><span class="resource-num">08</span><span class="resource-kind">Video educativo · Inglés</span><span class="resource-moment">Solo después del diagnóstico</span></div>
+<h3>What Happened in the Universe After the Big Bang?</h3><p class="source-name">NASA / ESA / CSA · 2016</p>
+<p class="resource-why">Ofrece un soporte audiovisual para abordar explicaciones de etapas tempranas del universo.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Después del diagnóstico, elaborar notas críticas sobre el video y generar nuevas preguntas.</dd><dt>Evidencia</dt><dd>Ficha audiovisual de tres hallazgos y una pregunta.</dd><dt>Condición de uso</dt><dd>Puede demandar más datos; priorizar alternativas de transcripción y subtítulos.</dd></dl>
+</details><a aria-label="Consultar recurso 08: What Happened in the Universe After the Big Bang?" class="resource-link" href="https://science.nasa.gov/asset/webb/what-happened-in-the-universe-after-the-big-bang/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article></div><p class="empty" role="status">No se encontraron recursos con ese término.</p><div class="bottomnav"><a data-view="hacer" href="#hacer">Continuar a Hacer / reflexionar →</a></div></section>
+<section aria-labelledby="t-hacer" class="view" id="hacer"><div class="section-head"><p class="eyebrow">02 · Transformar información</p><h2 id="t-hacer">Hacer y reflexionar: cuatro herramientas</h2><p>Instrumentación de la prefiguración: convertir la reflexión en decisiones pedagógicas documentadas, sin confundir el diseño de un prototipo con la aplicación de una investigación.</p></div><div class="search-wrap"><label for="s-hacer">Buscar entre las herramientas para hacer</label><input class="resource-search" data-target="hacer" id="s-hacer" placeholder="Buscar herramienta o función..." type="search"/></div><div class="resource-grid"><article class="resource" data-search="google forms · cuestionario cualitativo exploratorio permite trasladar a un prototipo las preguntas originales del cuestionario cualitativo exploratorio (anexo 3). preparar el formulario y verificar estructura, claridad, voluntariedad y permisos; probar solo con datos ficticios. google workspace · herramienta seleccionada tally alternativa formulario inventario original">
+<div class="resource-heading"><span class="resource-num">09</span><span class="resource-kind">Formulario digital · Español</span><span class="resource-moment">Inventario original · Actividad 2</span></div>
+<h3>Google Forms · Recurso curado originalmente</h3><p class="source-name">Google Workspace · herramienta del inventario anterior</p>
+<p class="resource-why">Permite trasladar a un prototipo las preguntas originales del Cuestionario Cualitativo Exploratorio (Anexo 3).</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Preparar el formulario y verificar estructura, claridad, voluntariedad y permisos; probar solo con datos ficticios.</dd><dt>Evidencia</dt><dd>Guion de formulario y prueba interna sin datos personales.</dd><dt>Condición de uso</dt><dd>En la actualización se incorpora Tally como alternativa para prototipar el instrumento; el inventario original se conserva para mantener trazabilidad.</dd></dl>
+</details><a aria-label="Consultar recurso 09: Google Forms · Cuestionario cualitativo exploratorio" class="resource-link" href="https://workspace.google.com/products/forms/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="zotero hace trazable la autoría, año, doi y procedencia de los recursos seleccionados. organizar referencias y exportar bibliografía para revisión humana. corporation for digital scholarship · zotero">
+<div class="resource-heading"><span class="resource-num">10</span><span class="resource-kind">Gestor bibliográfico</span><span class="resource-moment">Preparación docente</span></div>
+<h3>Zotero</h3><p class="source-name">Corporation for Digital Scholarship · Zotero</p>
+<p class="resource-why">Hace trazable la autoría, año, DOI y procedencia de los recursos seleccionados.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Organizar referencias y exportar bibliografía para revisión humana.</dd><dt>Evidencia</dt><dd>Inventario bibliográfico depurado.</dd><dt>Condición de uso</dt><dd>Compartir metadatos y citas, no copias de obras con restricciones.</dd></dl>
+</details><a aria-label="Consultar recurso 10: Zotero" class="resource-link" href="https://www.zotero.org/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="h5p · contenidos interactivos permite diseñar actividades breves de comparación y reflexión después del diagnóstico. prototipar una microactividad de contraste de explicaciones sin inducir las respuestas iniciales. h5p">
+<div class="resource-heading"><span class="resource-num">11</span><span class="resource-kind">Editor interactivo · HTML5</span><span class="resource-moment">Después del diagnóstico</span></div>
+<h3>H5P · Contenidos interactivos</h3><p class="source-name">H5P</p>
+<p class="resource-why">Permite diseñar actividades breves de comparación y reflexión después del diagnóstico.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Prototipar una microactividad de contraste de explicaciones sin inducir las respuestas iniciales.</dd><dt>Evidencia</dt><dd>Guion y capturas del prototipo.</dd><dt>Condición de uso</dt><dd>Depende de alojamiento compatible; revisar accesibilidad, permisos y conexión.</dd></dl>
+</details><a aria-label="Consultar recurso 11: H5P · Contenidos interactivos" class="resource-link" href="https://h5p.org/getting-started" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="draw.io / diagrams.net permite representar vínculos entre la pregunta, fuentes, actores, actividades y evidencias. diseñar un mapa de relaciones que pueda conservarse y editarse. draw.io">
+<div class="resource-heading"><span class="resource-num">12</span><span class="resource-kind">Editor de diagramas</span><span class="resource-moment">Preparación docente</span></div>
+<h3>draw.io / diagrams.net</h3><p class="source-name">draw.io</p>
+<p class="resource-why">Permite representar vínculos entre la pregunta, fuentes, actores, actividades y evidencias.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Diseñar un mapa de relaciones que pueda conservarse y editarse.</dd><dt>Evidencia</dt><dd>Mapa conceptual y descripción textual.</dd><dt>Condición de uso</dt><dd>Ofrecer alternativa textual de las relaciones para accesibilidad.</dd></dl>
+</details><a aria-label="Consultar recurso 12: draw.io / diagrams.net" class="resource-link" href="https://www.drawio.com/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article></div><p class="empty" role="status">No se encontraron herramientas con ese término.</p>
+<div class="darkbox"><p class="eyebrow">PLE actualizado · Tally integrado · Recurso 09 original: Google Forms</p><h3>Tally: instrumento de exploración inicial</h3><p>El cuestionario cualitativo exploratorio (Anexo 3) precede a la experiencia hipermedia en Genially. La integración tecnológica no cambia su sentido metodológico: explorar concepciones iniciales antes de presentar materiales de contraste. Por ahora se presenta como prototipo; las aplicaciones de investigación requieren los avales correspondientes.</p></div>
+<div class="forms-layout"><div class="forms-card"><span class="status">Enlace de Tally incorporado · contenido no auditado</span><h3>Cuestionario exploratorio en Tally</h3><p>Se ha incorporado el enlace facilitado por el equipo investigador. La correspondencia de todas las preguntas y las condiciones de publicación deben revisarse directamente en Tally. No se han verificado las respuestas ni se ha aplicado el instrumento con estudiantes.</p><a class="ghost-link" href="https://tally.so/r/Dq7NDl" rel="noopener noreferrer" target="_blank">Abrir el prototipo directamente en Tally ↗</a><br/><a class="form-action" href="https://tally.so/r/Dq7NDl" id="formUrlLink" rel="noopener noreferrer" target="_blank">Acceder al cuestionario en otra pestaña ↗</a><p class="forms-pending" id="formUrlNotice">Antes de usarlo con participantes, revisar consentimiento, protección de datos, orden de preguntas y permisos institucionales.</p></div><div class="forms-card"><h3>Preguntas originales de referencia</h3><p>Ejemplos literales citados en la Actividad 2, no un formulario completo:</p><ol class="quote-list"><li>Cuando escucha la expresión “Origen del Universo”, ¿qué es lo primero que piensa?</li><li>¿De dónde considera que provienen principalmente sus conocimientos acerca del origen del universo?</li><li>¿Considera que el origen del universo tiene una única explicación o pueden existir diferentes formas de comprenderlo?</li></ol></div></div><div class="forms-card tally-embedded" id="prototipo-tally" style="margin-top:22px;">
+<p class="eyebrow">Prototipo en línea · Prefiguración</p>
+<h3>Explorar concepciones iniciales</h3>
+<p>Este es el formulario enlazado por el equipo. Se integra aquí para revisión técnica y pedagógica, no como convocatoria a diligenciamiento investigativo. Comprueba su presentación y sus permisos antes de usarlo con personas participantes.</p>
+<iframe frameborder="0" height="760" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://tally.so/embed/Dq7NDl?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1" style="max-width:100%;border:1px solid #d5e2df;border-radius:13px;background:#fff;" title="Prototipo de cuestionario cualitativo exploratorio en Tally" width="100%"></iframe>
+<p><a class="ghost-link" href="https://tally.so/r/Dq7NDl" rel="noopener noreferrer" target="_blank">Si el formulario no se visualiza, abrir directamente en Tally ↗</a></p>
+</div><div class="darkbox" id="experiencia-genially">
+<p class="eyebrow">Segundo momento · Después del cuestionario inicial</p>
+<h3>Genially · ¿De dónde venimos? Un universo de preguntas</h3>
+<p>Esta cartografía hipermedia propone explorar y contrastar perspectivas científicas, culturales y pedagógicas. <strong>Antes de abrirla, finaliza la exploración inicial en Tally</strong>, para evitar que los contenidos modifiquen tus respuestas diagnósticas.</p>
+<p>El recurso ha sido enlazado por el equipo investigador; sus interacciones y permisos deben comprobarse directamente en Genially.</p>
+<div class="genially-launch">
+<button aria-controls="geniallyFrameHost" aria-expanded="false" id="launchGenially" style="display:inline-block;background:#c6ebdb;color:#123e42;border:0;border-radius:12px;padding:13px 17px;font:inherit;font-size:13px;font-weight:800;cursor:pointer" type="button">Ya terminé el cuestionario · Explorar Genially</button>
+<a href="https://view.genially.com/6b0223ebd5e571461548fc8a" rel="noopener noreferrer" style="display:inline-block;color:#e6f7f4;margin:12px 0 0 12px;font-size:13px;text-decoration:underline" target="_blank">Abrir Genially en otra pestaña ↗</a>
+<div aria-live="polite" data-embed-url="https://view.genially.com/6b0223ebd5e571461548fc8a" id="geniallyFrameHost" style="margin-top:18px"></div>
+<noscript><p>Si JavaScript está desactivado, utiliza el enlace directo a Genially cuando hayas terminado el cuestionario.</p></noscript>
+</div>
+</div>
+<div class="callout"><strong>Protección de datos:</strong> solo deben utilizarse datos ficticios para las pruebas internas mientras no existan las autorizaciones correspondientes. Este sitio no solicita, recibe ni almacena respuestas del cuestionario.</div><div class="bottomnav"><a data-view="compartir" href="#compartir">Continuar a Compartir →</a></div></section>
+<section aria-labelledby="t-compartir" class="view" id="compartir"><div class="section-head"><p class="eyebrow">03 · Conectar y aprender</p><h2 id="t-compartir">Compartir: tres recursos y una red humana</h2><p>La red personal de aprendizaje (PLN) está constituida por quienes dialogan, revisan y construyen conocimiento. Las herramientas facilitan la interacción, pero no sustituyen las relaciones pedagógicas.</p></div><div class="search-wrap"><label for="s-compartir">Buscar entre las herramientas para compartir</label><input class="resource-search" data-target="compartir" id="s-compartir" placeholder="Buscar red, diálogo o herramienta..." type="search"/></div><div class="resource-grid"><article class="resource" data-search="foro de discusión moodle facilita preguntas, discusión argumentada y diálogo entre perspectivas. abrir una conversación mediada después de explorar las concepciones iniciales. moodle">
+<div class="resource-heading"><span class="resource-num">13</span><span class="resource-kind">Diálogo asincrónico · LMS</span><span class="resource-moment">Interacción posterior</span></div>
+<h3>Foro de discusión Moodle</h3><p class="source-name">Moodle</p>
+<p class="resource-why">Facilita preguntas, discusión argumentada y diálogo entre perspectivas.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Abrir una conversación mediada después de explorar las concepciones iniciales.</dd><dt>Evidencia</dt><dd>Guía de foro y modelo de retroalimentación.</dd><dt>Condición de uso</dt><dd>Requiere permisos del campus; intervenciones de participantes no se vuelven datos de investigación sin consentimiento.</dd></dl>
+</details><a aria-label="Consultar recurso 13: Foro de discusión Moodle" class="resource-link" href="https://docs.moodle.org/en/Forum_activity" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="google docs · comentarios compartidos favorece revisión entre pares, comentarios y trazabilidad de versiones del diseño. solicitar dos fortalezas y una mejora; consolidar una matriz de decisiones. google workspace">
+<div class="resource-heading"><span class="resource-num">14</span><span class="resource-kind">Edición colaborativa</span><span class="resource-moment">Revisión entre pares</span></div>
+<h3>Google Docs · Comentarios compartidos</h3><p class="source-name">Google Workspace</p>
+<p class="resource-why">Favorece revisión entre pares, comentarios y trazabilidad de versiones del diseño.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Solicitar dos fortalezas y una mejora; consolidar una matriz de decisiones.</dd><dt>Evidencia</dt><dd>Matriz de retroalimentación y versión revisada.</dd><dt>Condición de uso</dt><dd>Compartir solo con personas autorizadas; excluir datos personales del cuestionario.</dd></dl>
+</details><a aria-label="Consultar recurso 14: Google Docs · Comentarios compartidos" class="resource-link" href="https://workspace.google.com/products/docs/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article>
+<article class="resource" data-search="padlet · tablero visual de ideas puede visibilizar preguntas nuevas y relaciones entre perspectivas después del diálogo. publicar preguntas emergentes sin identificar a quienes participaron en un estudio. padlet">
+<div class="resource-heading"><span class="resource-num">15</span><span class="resource-kind">Tablero colaborativo</span><span class="resource-moment">Interacción posterior</span></div>
+<h3>Padlet · Tablero visual de ideas</h3><p class="source-name">Padlet</p>
+<p class="resource-why">Puede visibilizar preguntas nuevas y relaciones entre perspectivas después del diálogo.</p>
+<details><summary>Uso pedagógico, evidencia y precauciones</summary>
+<dl><dt>Actividad propuesta</dt><dd>Publicar preguntas emergentes sin identificar a quienes participaron en un estudio.</dd><dt>Evidencia</dt><dd>Tablero modelo y guía de interacción.</dd><dt>Condición de uso</dt><dd>Revisar restricciones de plan y privacidad; Moodle es alternativa si hay barreras.</dd></dl>
+</details><a aria-label="Consultar recurso 15: Padlet · Tablero visual de ideas" class="resource-link" href="https://padlet.com/" rel="noopener noreferrer" target="_blank">Consultar recurso <span aria-hidden="true">↗</span></a>
+</article></div><p class="empty" role="status">No se encontraron herramientas con ese término.</p><div class="darkbox"><h3>¿Con quiénes se construye la PLN?</h3><p>Equipo investigador; asesor de investigación; docente y pares de la maestría. La futura participación de estudiantes de la Licenciatura en Educación Básica Primaria requiere las autorizaciones correspondientes. La publicación web de este PLE es una vía de consulta, no autorización para publicar datos de participantes.</p></div><p class="miniheading">Conexiones de retorno</p><div class="checks"><div class="check"><strong>Compartir → Leer</strong>La devolución entre pares genera preguntas nuevas y obliga a revisar fuentes.</div><div class="check"><strong>Compartir → Hacer</strong>Las observaciones sustentadas permiten mejorar el instrumento y su diseño.</div></div></section>
+<section aria-labelledby="t-ruta" class="view" id="ruta"><div class="section-head"><p class="eyebrow">Unidad exploratoria · Prefiguración</p><h2 id="t-ruta">«¿De dónde venimos?» en siete días flexibles</h2><p>Secuencia de diseño propuesta en la Actividad 2: una temporalización orientadora, no una aplicación ya realizada ni una duración obligatoria fijada por el docente.</p></div><div class="steps"><article class="step"><span class="step-no">Día 01</span><div><h3>Apertura</h3><p>Presentar pregunta abierta, voluntariedad y reglas de uso sin anticipar explicaciones.</p><p class="step-out"><b>Evidencia prevista:</b> Guion de apertura y verificación de no inducción.</p></div></article>
+<article class="step"><span class="step-no">Día 02</span><div><h3>Indagación</h3><p>Prototipar el cuestionario del Anexo 3; aplicarlo únicamente si existen los avales requeridos.</p><p class="step-out"><b>Evidencia prevista:</b> Instrumento preparado o respuestas voluntarias protegidas, según autorizaciones.</p></div></article>
+<article class="step"><span class="step-no">Día 03</span><div><h3>Lecturas situadas</h3><p>Tras la indagación, presentar las fuentes científicas y la crítica pedagógica.</p><p class="step-out"><b>Evidencia prevista:</b> Tabla de contraste y preguntas nuevas.</p></div></article>
+<article class="step"><span class="step-no">Día 04</span><div><h3>Condiciones y ética</h3><p>Valorar pertinencia de recursos, accesibilidad, DUA y uso responsable de IA.</p><p class="step-out"><b>Evidencia prevista:</b> Ficha analítica de fuentes y barreras.</p></div></article>
+<article class="step"><span class="step-no">Día 05</span><div><h3>Transformación</h3><p>Representar conexiones entre narrativas, experiencias, preguntas y explicaciones.</p><p class="step-out"><b>Evidencia prevista:</b> Red conceptual editable con alternativa textual.</p></div></article>
+<article class="step"><span class="step-no">Día 06</span><div><h3>Interacción</h3><p>Contrastar perspectivas de forma respetuosa; realizar coevaluación del diseño.</p><p class="step-out"><b>Evidencia prevista:</b> Intervención argumentada y matriz de devolución.</p></div></article>
+<article class="step"><span class="step-no">Día 07</span><div><h3>Revisión</h3><p>Registrar qué cambió en las preguntas y en las decisiones de diseño.</p><p class="step-out"><b>Evidencia prevista:</b> Versión revisada y reflexión crítica.</p></div></article></div><div class="callout"><strong>Alcance:</strong> esta ruta desarrolla únicamente un momento de la pista <em>Origen del Universo (I)</em>. No constituye la totalidad del currículo ni declara que el cuestionario haya sido validado o aplicado.</div></section>
+<section aria-labelledby="t-criterios" class="view" id="criterios"><div class="section-head"><p class="eyebrow">Curación crítica · Diseño responsable</p><h2 id="t-criterios">De coleccionar enlaces a justificar mediaciones</h2><p>En la Actividad 2, los recursos fueron seleccionados para cumplir propósitos pedagógicos concretos. Cada ficha documenta una decisión que debe revisarse cuando se configure la unidad institucional.</p></div><p class="miniheading">Ocho criterios empleados en la curación</p><div class="checks"><div class="check"><strong>C1 · Pertinencia</strong>Relación con la pregunta y el momento formativo.</div><div class="check"><strong>C2 · Confiabilidad</strong>Autoría y procedencia verificables.</div><div class="check"><strong>C3 · Rigor y vigencia</strong>Calidad de la fuente y actualidad pertinente.</div><div class="check"><strong>C4 · Valor didáctico</strong>Contribución a actividades y resultados previstos.</div><div class="check"><strong>C5 · Accesibilidad</strong>Alternativas para barreras de idioma, lectura y conexión.</div><div class="check"><strong>C6 · Viabilidad</strong>Disponibilidad y condiciones tecnológicas reales.</div><div class="check"><strong>C7 · Condiciones de uso</strong>Licencias, permisos y límites de reutilización.</div><div class="check"><strong>C8 · Aporte al PLE</strong>Función dentro de leer, hacer o compartir.</div></div><div class="darkbox"><h3>Compromisos metodológicos y éticos</h3><p>Preservar las preguntas originales del Anexo 3. No presentar explicaciones de cosmología antes de conocer las concepciones iniciales. No calificar creencias personales. Diferenciar estatutos de validación de teorías científicas, reflexiones filosóficas y relatos culturales. No introducir datos identificables en servicios externos sin autorizaciones. No confundir un recurso gratuito con uno libre de restricciones.</p></div><p class="miniheading">Referentes conceptuales</p><div class="refs">Castaño Garrido, C. M., Etxebarria Lejarreta, A., Garay Ruiz, U., López de la Serna, A., Romero Andonegui, A. y Tejada Garitano, E. (2016). <em>Herramientas Web 2.0 para la construcción de un PLE: análisis y usos</em>. En <em>PLE: Construyendo el conocimiento en la red</em> (tema 4). Universidad del País Vasco.</div><div class="refs">Castañeda, L., y Adell, J. (2013). <em>La anatomía de los PLEs</em>. En <em>Entornos personales de aprendizaje: claves para el ecosistema educativo en red</em> (pp. 11–27). Marfil. <a href="https://hdl.handle.net/10201/30408" rel="noopener noreferrer" target="_blank">Consultar referencia ↗</a></div><div class="refs">Escobar Martínez, L. Y., y Montilla Eraso, O. G. (2026). <em>Diseño, planeación y organización del Entorno Personal de Aprendizaje (PLE)</em> [Actividad 2, documento académico no publicado]. Universidad de Nariño, Maestría en Educación Virtual.</div></section>
+<section aria-labelledby="t-bitacora" class="view" id="bitacora">
+  <div class="section-head">
+    <p class="eyebrow">Horizonte de aprendizaje · Preguntas abiertas</p>
+    <h2 id="t-bitacora">Lo que todavía nos preguntamos</h2>
+    <p>El recorrido no culmina con una respuesta definitiva. Abre preguntas sobre nuestros modos de conocer y sobre las posibilidades de enseñar el origen del universo en la formación de futuros maestros.</p>
+  </div>
+  <div class="questions-grid">
+    <article class="question-card"><span>01</span><h3>¿Desde dónde hablamos?</h3><p>¿Cómo se han formado nuestras concepciones acerca del origen y qué experiencias las han acompañado?</p></article>
+    <article class="question-card"><span>02</span><h3>¿Cómo conocemos?</h3><p>¿Qué papel cumplen las evidencias científicas, las preguntas filosóficas y los relatos culturales?</p></article>
+    <article class="question-card"><span>03</span><h3>¿Cómo nos relacionamos?</h3><p>¿Qué preguntas surgen cuando dialogamos con voces y perspectivas distintas de las propias?</p></article>
+    <article class="question-card"><span>04</span><h3>¿Cómo podríamos enseñar?</h3><p>¿Qué decisiones pedagógicas permitirían cultivar la curiosidad y la reflexión en Educación Básica Primaria?</p></article>
+  </div>
+  <div class="callout"><strong>Alcance del recorrido:</strong> esta propuesta corresponde a un momento de prefiguración. La aplicación investigativa del cuestionario requiere consentimiento informado y autorizaciones; aquí no se presentan resultados de campo ni interpretaciones atribuidas a participantes.</div>
+  <div class="bottomnav"><a data-view="arquitectura" href="#arquitectura">Volver a los cuatro movimientos →</a><a data-view="compartir" href="#compartir">Pensar con otros →</a></div>
+</section>
+<footer class="footer">Universidad de Nariño · Maestría en Educación Virtual · Leidy Yurani Escobar Martínez y Omar Giovanni Montilla Eraso · Recurso de diseño académico basado en la Actividad 2 (2026). La publicación del entorno no equivale a una implementación o validación investigativa.</footer>
+</main>
+</div>
+<noscript>Para recorrer las diferentes secciones del PLE, habilite JavaScript en su navegador. Los enlaces de origen se mantienen incluidos en el documento.</noscript>
+<script>
+(() => {
+  'use strict';
+  // Completar SOLO cuando el equipo disponga del enlace real del formulario-prototipo.
+  const CONFIG = { formUrl: 'https://tally.so/r/Dq7NDl', geniallyUrl: 'https://view.genially.com/6b0223ebd5e571461548fc8a' };
+  const allowed = new Set(['inicio','arquitectura','leer','hacer','compartir','ruta','criterios','bitacora']);
+  const views=[...document.querySelectorAll('.view')];
+  const navLinks=[...document.querySelectorAll('[data-view]')];
+  function renderRoute() {
+    const requested=decodeURIComponent(location.hash.slice(1));
+    const id=allowed.has(requested)?requested:'inicio';
+    views.forEach(el=>{el.classList.toggle('active',el.id===id);el.setAttribute('aria-hidden',String(el.id!==id))});
+    navLinks.forEach(el=>{ const active=el.dataset.view===id; el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+    window.scrollTo({top:0,behavior:'instant'});
+    document.title=(id==='inicio'?'El origen como pregunta':id.charAt(0).toUpperCase()+id.slice(1))+' · PLE | Universidad de Nariño';
+  }
+  window.addEventListener('hashchange',renderRoute);
+  renderRoute();
+  document.querySelectorAll('.resource-search').forEach(input=>{
+    input.addEventListener('input',()=>{
+      const panel=document.getElementById(input.dataset.target);
+      const term=input.value.trim().toLocaleLowerCase('es');
+      const items=[...panel.querySelectorAll('.resource')];let shown=0;
+      items.forEach(item=>{ const visible=item.dataset.search.includes(term); item.hidden=!visible;if(visible) shown++; });
+      panel.querySelector('.empty').style.display=shown?'none':'block';
+    });
+  });
+  if(/^https:\/\//i.test(CONFIG.formUrl)){
+    const form=document.getElementById('formUrlLink');
+    form.href=CONFIG.formUrl;form.hidden=false;
+    document.getElementById('formUrlNotice').hidden=true;
+    document.querySelector('.forms-layout .status').textContent='Enlace del prototipo disponible · verificar permisos';
+  }
+
+  const launchGenially=document.getElementById('launchGenially');
+  if(launchGenially){
+    launchGenially.addEventListener('click',()=>{
+      const host=document.getElementById('geniallyFrameHost');
+      if(host.querySelector('iframe')){
+        host.scrollIntoView({behavior:'smooth',block:'nearest'});
+        return;
+      }
+      const iframe=document.createElement('iframe');
+      iframe.src=CONFIG.geniallyUrl;
+      iframe.title='Experiencia hipermedia: ¿De dónde venimos? Un universo de preguntas';
+      iframe.loading='lazy';
+      iframe.allowFullscreen=true;
+      iframe.setAttribute('allow','fullscreen');
+      iframe.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+      iframe.style.cssText='width:100%;aspect-ratio:16/9;min-height:330px;border:1px solid #628385;border-radius:13px;background:#fff;display:block';
+      host.appendChild(iframe);
+      launchGenially.textContent='Genially abierto · Volver a la experiencia';
+      launchGenially.setAttribute('aria-expanded','true');
+    });
+  }
+})();
+</script>
+</body>
+</html>
